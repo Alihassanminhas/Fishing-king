@@ -1,0 +1,52 @@
+{
+  "name": "trending-fishing-store",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,green \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "tsx watch backend/src/server.ts",
+    "dev:web": "npm --workspace frontend run dev",
+    "build": "npm --workspace frontend run build && npm --workspace backend run build",
+    "typecheck": "npm --workspace frontend run typecheck && npm --workspace backend run typecheck",
+    "db:migrate": "tsx backend/src/db/migrate.ts",
+    "db:seed": "tsx backend/src/db/seed.ts",
+    "admin:create": "tsx backend/src/db/create-admin.ts",
+    "start": "node backend/dist/server.js"
+  },
+  "dependencies": {
+    "@cloudinary/react": "^1.14.4",
+    "@cloudinary/url-gen": "^1.22.0",
+    "@stripe/stripe-js": "^7.9.0",
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.16.3",
+    "stripe": "^18.4.0",
+    "zod": "^4.0.14"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cookie-parser": "^1.4.9",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.3.0",
+    "@types/pg": "^8.15.5",
+    "@vitejs/plugin-react": "^5.0.2",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.4"
+  }
+}

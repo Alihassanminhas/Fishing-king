@@ -1,0 +1,1 @@
+{\n     "extends": "../tsconfig.base.json",\n     "compilerOptions":\n      {\n        "rootDir": "src",\n        "outDir": "dist",\n        "types": ["node"],\n        "lib": ["ES2022"],\n        "module": "NodeNext",\n        "moduleResolution": "NodeNext"\n        },\n        "include": ["src/**/*.ts"\n    ]\n    }\n
