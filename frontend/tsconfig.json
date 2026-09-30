@@ -1,1 +1,11 @@
-{\n    "extends": "../tsconfig.base.json",\n    "compilerOptions":\n     {\n         "composite": true,\n          "jsx": "react-jsx",\n          "lib": ["ES2022", "DOM", "DOM.Iterable"],\n          "types": ["vite/client"],\n          "noEmit": true\n    },\n          "include": ["src", "vite.config.ts"]\n}\n
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "jsx": "react-jsx",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["vite/client"],
+    "noEmit": true
+  },
+  "include": ["src", "vite.config.ts"]
+}
